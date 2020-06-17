@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
+  <link rel="stylesheet"  href="{% static 'css/board.css' %}"/>
+  <br>
+
+<h3 align ="center">RESULTS FOR THE SEARCH ITEM</h3
+
+<div  align="center">
+<table class="table table-striped table-hover container ">
+    <tr>
+      <th>FDCID</th>
+      <th>DESCRIPTION</th>
+      <th>BRAND OWNER</th>
+      <th>PUBLISHED DATE</th>
+    </tr>
+{% for result in search_results %}
+    <tr>
+      <td><a href="details/{{result.fdcId}}">{{result.fdcId}}</a></td>
+      <td><a href="details/{{result.fdcId}}">{{result.description}}</a></td>
+      <td><a href="details/{{result.fdcId}}">{{result.brandOwner}}</a></td>
+      <td><a href="details/{{result.fdcId}}">{{result.publicationDate}}</a></td>
+    </tr>
+    {% empty %}
+    No results found
+    {% endfor%}
+
+</table>
+</div>
+
+{% if is_paginated %}
+
+<div  align ="center">
+    <span class="step-links">
+        {% if search_results.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a   href="?page={{ search_results.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ search_results.number }} of {{search_results.paginator.num_pages }}.
+        </span>
+
+        {% if search_results.has_next %}
+            <a href="?page={{ search_results.next_page_number }}">next</a>
+            <a  href="?page={{ search_results.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+    </div>
+
+{% endif %}
+{% endblock%}

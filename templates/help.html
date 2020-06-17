@@ -1,0 +1,75 @@
+{%extends 'base.html' %}
+
+{% block body_block %}
+  <div class="container">
+    <h3>Key Terms and Concepts</h3>
+
+<h5>Search Results</h5>
+<h6>Search Results Pages</h6>
+<p>The pages listing all the foods that match the search criteria entered by the user and that provide nutrient and related information for a specific food.
+Identifying and Categorizing Food Items
+FDC_ID Number
+This is the number provided for each food data record in FoodData Central. A food record is the totality of information (e.g., nutrient or food component value, descriptive information) published on a food item. Each time the data in a food record changes, that food item receives a new FDC_ID number.
+FDC Source_ID Number
+This is the FDC_ID number that identifies the record of a unique sample of a food that has been analyzed for one or more nutrients or food components.
+NDB Number
+This number is a unique identifier for each food in Foundation Foods and SR Legacy. Even if the FDC_ID number changes because of an update to the food record, the NDB number will remain the same because it is linked to the food, not to the information about the food. Users can search for a food item by the name of the food or the NDB number.
+Global Trade Item Number (GTIN)
+The GTIN is a number that can be used by a company to uniquely identify their trade items. It is used to identify specific food items in the USDA Global Branded Foods Database. Users can search for a food item by the name of the food or the GTIN number.
+Food Code
+An 8-digit number that identifies foods in FNDDS. These foods are used in analyses of NHANES dietary data. Users can search for a food in FNDDS either by its name or its food code.
+Food Category
+A method for classifying similar foods. Each data type has its own system of food categories.
+Characteristics of Nutrient and Food Component Values
+Min
+The smallest amount of a nutrient or food component found in an analyzed sample of a food item.
+Max
+The greatest amount of a nutrient or food component found in an analyzed sample of a food item.
+Median
+The amount of a nutrient or food component that is at the midpoint of all the amounts in the samples analyzed for a food item.
+Average Amount
+The amount of a nutrient or food component derived by summing the amounts for each analyzed sample, which may include the mean of multiple determinations of the sample, and then dividing by the number of samples.
+Updates to Food Data
+Information about the foods in FoodData Central is updated periodically. At the current time, only the USDA Global Branded Foods Database allows users to see changes to the data in this data type. The search results page will include an Update Log tab for those foods that have been updated. This tab will appear next to the Nutrients tab and users can learn about specific changes by clicking on this tab. The log will list one or more previous food records for that food item (i.e., “an historical food record”). Each of these historical food records will detail the specific change. These changes can be any one of the following:
+
+Description changed
+Food category changed
+Ingredient changed
+Nutrient value changed
+Nutrient added
+Nutrient removed
+Serving size changed
+Users can compare the current food record to the historical food record by clicking on the historical record. This will bring up a new browser window allowing users to see the records side by side.
+
+Tips for Online Searching
+Conducting a Search
+A search on FoodData Central involves four steps:
+
+Step 1:  Use the Search FoodData Central box, which is found on each page of the website. You can search for a current item by its name or by one of the numbers that uniquely identifies that item within a specific FDC data type (e.g., NDB number, FNDDS Food Code, or GTIN number).
+Step 2: Use the “Filter Search Results” on the left side of the screen to select the data type you want to search. The numbers in parentheses after the data type indicate the number of foods in that type related to your search. If you want to search all of the data types, leave all the boxes checked. If you want to search one or more specific data types, unselect the boxes next to the data type you do not want to include in the search. Click Search.
+Step 3: You will see a Search Results page that provides a list of items from the data type(s) you selected. Click on the item that best matches the food you are interested in.
+Step 4: A more detailed search results page provides nutrient and other food component values, portion size information, and other information about the item and how the data were derived.
+For more information on searching FoodData Central using downloads, see the Download Data page.
+
+Using Search Operators
+You can use symbols in your search to make your search results more precise.
+
+Search for an exact phrase
+Quotation marks search for an exact phrase:
+"green pepper" will only match green pepper products, not anything with the word “green” or “pepper” in it.
+
+Require words
++ (plus sign) makes a word required:
+candy corn matches all foods with “candy” or “corn”.
+
++candy corn matches only foods that have “candy” and weighs the foods that have “corn” higher than those that don’t.
+
++candy +corn matches only foods that have both “candy” and “corn”.
+
+Exclude words
+- (minus sign) excludes foods having the word:</p>
+
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block body_block%}
+<link rel="stylesheet"  href="{% static 'css/basic.css' %}" />
+
+<div class ='container'  >
+  <h3>{{term}}</h3>
+  <h4>Serving size : {{result.servingSize}}{{result.servingSizeUnit}}</h4>
+  <pre class='tab'><h4><td><em>FDCID:{{result.fdcId}}</em></td>  <td><em>Brand Owner: {{result.brandOwner}}</em></td>  <td><em>GTIN/UPC:{{result.gtinUpc}}</em></td>
+  <td><em>Market Country: {{result.marketCountry}}</em></td> <td><em>Branded Food Category:{{result.brandedFoodCategory}}</em></td></h4></pre>
+</div>
+
+<div class = 'container' align = 'center'>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Unit</th>
+      <th>Deriv. by</th>
+    </tr>
+{% for data in result.foodNutrients %}
+<tr>
+  <td>{{data.nutrient.name}}</td>
+  <td>{{data.amount}}</td>
+  <td>{{data.nutrient.unitName}}</td>
+  <td>{{data.foodNutrientDerivation.description}}</td>
+</tr>
+{% endfor %}
+
+  </table>
+  </div>
+
+
+{% endblock %}
