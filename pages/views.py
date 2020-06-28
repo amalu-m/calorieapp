@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from . import forms
-import requests
 import json
 from django.views.generic import ListView, FormView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
