@@ -119,7 +119,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static'),]
 
 LIST_URL = 'https://api.nal.usda.gov/fdc/v1/foods/list'
 DETAIL_URL = 'https://api.nal.usda.gov/fdc/v1/food/'
