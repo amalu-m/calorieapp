@@ -23,8 +23,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [amalulinto.pythonanywhere.com]
-
+ALLOWED_HOSTS = ['amalulinto.pythonanywhere.com']
 
 # Application definition
 
@@ -119,8 +118,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
-
-
 
 LIST_URL = 'https://api.nal.usda.gov/fdc/v1/foods/list'
 DETAIL_URL = 'https://api.nal.usda.gov/fdc/v1/food/'
