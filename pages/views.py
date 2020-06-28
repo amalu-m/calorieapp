@@ -72,7 +72,7 @@ class SearchHelper(object):
     """
     def search(self, food):
         headers = {
-            'X-Api-Key': secrets.API_KEY
+            'X-Api-Key': API_KEY
         }
 
         url = settings.LIST_URL
@@ -94,7 +94,7 @@ def detailPage(request,fdcId):
     """
     result = {}
     headers = {
-        'X-Api-Key': secrets.API_KEY
+        'X-Api-Key': API_KEY
     }
 
     url = settings.DETAIL_URL + str(fdcId)
