@@ -1,3 +1,5 @@
 *.pyc
 *.env
-settings.py
+secrets.py
+webpage/settings/local.py
+webpage/db.sqlite3
