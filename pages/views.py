@@ -7,6 +7,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.urls import reverse_lazy
 from django.conf import settings
 import logging
+from webpage.settings import base
 
 import pdb
 
@@ -72,7 +73,7 @@ class SearchHelper(object):
     """
     def search(self, food):
         headers = {
-            'X-Api-Key': API_KEY
+            'X-Api-Key': base.API_KEY
         }
 
         url = settings.LIST_URL
@@ -94,7 +95,7 @@ def detailPage(request,fdcId):
     """
     result = {}
     headers = {
-        'X-Api-Key': API_KEY
+        'X-Api-Key': base.API_KEY
     }
 
     url = settings.DETAIL_URL + str(fdcId)
