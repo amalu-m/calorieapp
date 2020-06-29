@@ -25,7 +25,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['amalulinto.pythonanywhere.com']
+ALLOWED_HOSTS = ['www.caloriecount.info']
 
 # Application definition
 
