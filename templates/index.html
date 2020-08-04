@@ -1,35 +1,38 @@
 {% extends 'base.html' %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/basic.css' %}"/>
-{% block body_block %}
+{% block content %}
 
-<div class="container">
-
-  <h1 align ='center'>FOOD CALORIE COUNTER</h1>
+<div style="padding:15px;text-align:center;">
+  <h1>FOOD CALORIE COUNTER</h1>
 </div>
 
 
 <br>
 
-<div class="container">
+<div class="container" >
 
     <h6>Calories provide the energy that your body needs to function and stay alive.
 
 While there is no evidence to support that negative-calorie foods burn more calories than they provide, foods that are already low in calories may actually provide fewer calories than expected. This is because your body uses energy to digest them.</h6>
+</div>
+<div class="container">
+    <form  method="post">
+        <input type="text" name="query" placeholder="Search for food or FDC ID or UPC" autocomplete='off'>
+        {% csrf_token %}
 
-<form align = "center" method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-    <button type="submit">Search food info</button>
-  </form>
+         <button type="submit"><i class="fa fa-search"></i></button>
+
+    </form>
+  </div>
   <br>
-
-
+  <br>
+<div class="container">
 
 <div class="content-wrapper">
-      <div class="portfolio-items-wrapper">
+      <div class="row portfolio-items-wrapper">
 
-        <div class="portfolio-item-wrapper select1">
+        <div class="col-sm-4 portfolio-item-wrapper select1">
           <div class="portfolio-img-background"style= "background-image: url(static/images/food.jpeg)"></div>
 
           <div class="img-text-wrapper">
@@ -43,9 +46,8 @@ While there is no evidence to support that negative-calorie foods burn more calo
 
 
           </div>
-
         </div>
-        <div class="portfolio-item-wrapper select2">
+        <div class="col-sm-4 portfolio-item-wrapper select2">
           <div class="portfolio-img-background"style= "background-image: url(static/images/fruits.jpeg)"></div>
 
           <div class="img-text-wrapper">
@@ -59,7 +61,7 @@ While there is no evidence to support that negative-calorie foods burn more calo
           </div>
 
         </div>
-          <div class="portfolio-item-wrapper select3">
+          <div class="col-md-4 portfolio-item-wrapper select3">
             <div class="portfolio-img-background"
             style= "background-image: url(static/images/vegan.jpeg)"></div>
             <div class="img-text-wrapper">
@@ -74,6 +76,7 @@ While there is no evidence to support that negative-calorie foods burn more calo
             </div>
             </div>
             </div>
-            </div
+          </div>
 
-{% endblock %}
+
+{% endblock content %}
