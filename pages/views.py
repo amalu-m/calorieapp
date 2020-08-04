@@ -24,10 +24,13 @@ class ContactView(FormView):
 
     def form_valid(self, form, **kwargs):
         self.term = form.cleaned_data['query']
+        self.request.session['word_searched'] = form.cleaned_data['query']
         return super().form_valid(form, **kwargs)
 
     def get_success_url(self):
         return reverse_lazy("pages:query", kwargs = {'query':self.term})
+
+
 
 class Result(ListView):
 
@@ -54,18 +57,14 @@ class Result(ListView):
             'search_results': []
             }
             logging.debug("got valid results with count: " + str(len(self.search_results)))
+            context['search_result_length'] = len(self.search_results)
+            len(self.search_results)
+
         else:
             context  = super(Result, self).get_context_data()
-            page = self.request.GET.get('page',1)
-            paginator = Paginator(self.search_results, self.paginate_by)
-            try:
-                results = paginator.page(page)
-                logging.debug("got valid results with count: " + str(len(self.search_results)))
-            except PageNotAnInteger:
-                results = paginator.page(1)
-                logging.error("tried to get a non-integer page")
-            context['search_results'] = results
-        return context
+            context['search_result_length'] = len(self.search_results)
+            context['search_results'] = self.search_results
+            return context
 
 class SearchHelper(object):
     """
